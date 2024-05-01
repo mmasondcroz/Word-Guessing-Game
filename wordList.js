@@ -1,4 +1,4 @@
-const wordList = [
+let wordList = [
     {
         word: "falda",
         hint: "skirt"
@@ -88,7 +88,7 @@ const wordList = [
         hint: "watch"
     },
     {
-        word: "cinturon",
+        word: "cinturón",
         hint: "belt"
     },
     {
@@ -156,7 +156,7 @@ const wordList = [
         hint: "It fits me big"
     },
     {
-        word: "mequedapequeno",
+        word: "mequedapequeño",
         hint: "It fits me small"
     },
     {
@@ -164,7 +164,7 @@ const wordList = [
         hint: "It fits them big"
     },
     {
-        word: "lequedapequeno",
+        word: "lequedapequeño",
         hint: "It fits them small"
     },
 ]

@@ -84,12 +84,34 @@ typingInput.addEventListener("input", initGame);
 inputs.addEventListener("click", () => typingInput.focus());
 document.addEventListener("keydown", () => typingInput.focus());
 
+function createButton(character) {
+    const button = document.createElement('button');
+    button.textContent = character;
+    button.addEventListener('click', function() {
+      initGame({ target: { value: character } });
+      
+      console.log(`Button ${character} clicked`);
+    });
+    
+    return button;
+  }
+
+  const specialCharacters = ['á', 'é', 'í', 'ó', 'ú', 'ü', 'ñ'];
+
+  const container = document.getElementById('special-characters-container');
+
+  specialCharacters.forEach(character => {
+    const button = createButton(character);
+    container.appendChild(button);
+  });
+
 //Upload a text file with your own vocabulary words (format "word, hint" with an enter between lines)
 const fileInput = document.getElementById('file-input');
 
 fileInput.addEventListener('change', handleFileSelect);
 
 async function handleFileSelect(event) {
+    let wordListArray = []
     const file = await event.target.files[0];
     const reader = new FileReader();
 
@@ -100,11 +122,11 @@ async function handleFileSelect(event) {
         // Assuming each line contains a word and a hint separated by a comma
         wordList = lines.map(line => {
             const [word, hint] = line.split(',');
-            return { word: word.trim(), hint: hint.trim() };
+            wordListArray.push ({ word: word.trim(), hint: hint.trim() });
         });
         
         console.log(wordList);
-        //wordList = customWordList; // Update the global wordList variable
+        wordList = wordListArray; // Update the global wordList variable
         randomWord(); 
     };
 

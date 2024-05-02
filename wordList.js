@@ -24,7 +24,7 @@ let wordList = [
         hint: "socks"
     },
     {
-        word: "sueter",
+        word: "suéter",
         hint: "sweater"
     },
     {

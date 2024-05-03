@@ -52,7 +52,7 @@ let wordList = [
         hint: "glasses"
     },
     {
-        word: "gafasdesol",
+        word: "gafas de sol",
         hint: "sunglasses"
     },
     {
@@ -120,7 +120,7 @@ let wordList = [
         hint: "I am wearing"
     },
     {
-        word: "tepones",
+        word: "te pones",
         hint: "You put on"
     },
     {
@@ -128,7 +128,7 @@ let wordList = [
         hint: "You are wearing"
     },
     {
-        word: "sepone",
+        word: "se pone",
         hint: "He/She puts on"
     },
     {
@@ -136,35 +136,35 @@ let wordList = [
         hint: "He/she is wearing"
     },
     {
-        word: "mequedabien",
+        word: "me queda bien",
         hint: "It fits me well"
     },
     {
-        word: "mequedamal",
+        word: "me queda mal",
         hint: "It fits me poorly"
     },
     {
-        word: "lequedabien",
+        word: "le queda bien",
         hint: "It fits them well"
     },
     {
-        word: "lequedamal",
+        word: "le queda mal",
         hint: "It fits them poorly"
     },
     {
-        word: "mequedagrande",
+        word: "me queda grande",
         hint: "It fits me big"
     },
     {
-        word: "mequedapequeño",
+        word: "me queda pequeño",
         hint: "It fits me small"
     },
     {
-        word: "lequedagrande",
+        word: "le queda grande",
         hint: "It fits them big"
     },
     {
-        word: "lequedapequeño",
+        word: "le queda pequeño",
         hint: "It fits them small"
     },
 ]

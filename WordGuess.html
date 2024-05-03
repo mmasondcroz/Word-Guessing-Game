@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>¡ADIVINA! | A vocabulary guessing game</title>
   <link rel="stylesheet" href="WordGuessStyle.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,56 @@
   <div class="wrapper">
     <h1>¡ADIVINA la palabra!</h1>
     <br></br>
+    <select id="class-dropdown">
+      <option value="default">Try it out</option>
+      <optgroup label="Spanish 1 Units">
+        <option value="spanish1-unit-a">Unit A: Introducciones</option>
+        <option value="spanish1-unit-b">Unit B: Me gusta</option>
+        <option value="spanish1-unit-c">Unit C: Descripciones</option>
+        <option value="spanish1-unit-d">Unit D: Capibara</option>
+        <option value="spanish1-unit-e">Unit E: Las mascotas</option>
+        <option value="spanish1-unit-f">Unit F: La escuela</option>
+        <option value="spanish1-unit-g">Unit G: Familia loca</option>
+        <option value="spanish1-unit-h">Unit H: El almuerzo</option>
+        <option value="spanish1-unit-i">Unit I: Los deportes</option>
+        <option value="spanish1-unit-j">Unit J: La ropa</option>
+        <option value="spanish1-unit-k">Unit K: Piratas</option>
+      </optgroup>
+      <optgroup label="Spanish 2 Units">
+        <option value="spanish2-preunit">Pre-Unit: Intros</option>
+        <option value="spanish2-unit-a">Unit A: La comida tradicional</option>
+        <option value="spanish2-unit-b">Unit B: Celebraciones</option>
+        <option value="spanish2-unit-c">Unit C: Rutinas cotidianas</option>
+        <option value="spanish2-unit-d">Unit D: Creencias</option>
+        <option value="spanish2-unit-e">Unit E: Cultura personal</option>
+        <option value="spanish2-unit-f">Unit F: La niñez</option>
+        <option value="spanish2-unit-g">Unit G: Leyendas</option>
+        <option value="spanish2-unit-h">Unit H: Experiencias</option>
+      </optgroup>
+      <optgroup label="Spanish 3 Units">
+        <option value="spanish3-unit-a">Unit A: Las escuelas</option>
+        <option value="spanish3-unit-b">Unit B: Las redes sociales</option>
+        <option value="spanish3-unit-c">Unit C: El medio ambiente</option>
+        <option value="spanish3-unit-d">Unit D: ¿Por qué viajar?</option>
+        <option value="spanish3-unit-e">Unit E: Diversidad global</option>
+    </optgroup>
+        <optgroup label="Spanish 4 Units">
+        <option value="spanish4-unit-a">Unit A: La música</option>
+        <option value="spanish4-unit-b">Unit B: Movimiento global</option>
+        <option value="spanish4-unit-c">Unit C: Carreras</option>
+        <option value="spanish4-unit-d">Unit D: Prácticas médicas</option>
+        <option value="spanish4-unit-e">Unit E: Situaciones médicas</option>
+        <option value="spanish4-unit-f">Unit F: Extracurriculares</option>
+        </optgroup>
+      <optgroup label="AP Spanish Units">
+        <option value="ap-spanish-unit-a">Unit A</option>
+        <option value="ap-spanish-unit-b">Unit B</option>
+        <option value="ap-spanish-unit-c">Unit C</option>
+        <option value="ap-spanish-unit-d">Unit D</option>
+        <option value="ap-spanish-unit-e">Unit E</option>
+        <option value="ap-spanish-unit-f">Unit F</option>
+        </optgroup>
+    </select>
     <div class="content">
      <input type="text" class="typing-input" maxlength="1">
       <div class="inputs"></div>
@@ -49,8 +99,10 @@
       <button id="add-word-btn">Add Word</button>
     </div>
   </div>
-
   <script src="wordList.js"></script>
+  <script src="wordListSPN1UJ.js""></script>"
+  <script src="wordListSPN1UK.js"></script>
+  <script src="wordListSPN3UE.js"></script>
   <script src="wordGuess2.js"></script>
 </body>
 </html>

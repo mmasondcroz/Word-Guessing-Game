@@ -39,7 +39,7 @@ randomWord();
 function initGame(e) {
   let key = e.target.value.toLowerCase();
   if (
-    key.match(/^[A-Za-záéóíúüñÑÁÉÍÚÜÓ]+$/) &&
+    (key.match(/^[A-Za-záéóíúüñÑÁÉÍÚÜÓ\s.,!?¿¡]+$/i) || key === " ") &&
     !incorrectLetters.includes(` ${key}`) &&
     !correctLetters.includes(key)
   ) {
@@ -89,19 +89,18 @@ function createButton(character) {
     button.textContent = character;
     button.addEventListener('click', function() {
       initGame({ target: { value: character } });
-      
       console.log(`Button ${character} clicked`);
     });
-    
     return button;
   }
-
-  const specialCharacters = ['á', 'é', 'í', 'ó', 'ú', 'ü', 'ñ'];
-
+  
+  const specialCharacters = ['á', 'é', 'í', 'ó', 'ú', 'ü', 'ñ', "¡", "¿"];
+  
   const container = document.getElementById('special-characters-container');
-
+  
   specialCharacters.forEach(character => {
     const button = createButton(character);
+    button.classList.add('special-character-btn'); // Add a class for styling
     container.appendChild(button);
   });
 
@@ -173,4 +172,127 @@ addWordBtn.addEventListener('click', () => {
     } else {
         alert('Please enter the word and hint separated by a comma.');
     }
+});
+
+const classDropdown = document.getElementById('class-dropdown');
+
+classDropdown.addEventListener('change', () => {
+    let selectedClass = classDropdown.value;
+    console.log("Change Made In Dropdown", selectedClass);
+  switch (selectedClass) {
+    case 'spanish1-unit-a':
+      wordList = spanish1UnitAWordList;
+      break;
+    case 'spanish1-unit-b':
+      wordList = spanish1UnitBWordList;
+      break;
+      case 'spanish1-unit-c':
+      wordList = spanish1UnitCWordList;
+      break;
+      case 'spanish1-unit-d':
+      wordList = spanish1UnitDWordList;
+      break;
+      case 'spanish1-unit-e':
+      wordList = spanish1UnitEWordList;
+      break;
+      case 'spanish1-unit-f':
+      wordList = spanish1UnitFWordList;
+      break;
+      case 'spanish1-unit-g':
+      wordList = spanish1UnitGWordList;
+      break;
+      case 'spanish1-unit-h':
+      wordList = spanish1UnitHWordList;
+      break;
+      case 'spanish1-unit-i':
+      wordList = spanish1UnitIWordList;
+      break;
+      case 'spanish1-unit-j':
+      wordList = spanish1UnitJWordList;
+      break;
+      case 'spanish1-unit-k':
+console.log("K is selected")
+      wordList = spanish1UnitKWordList;
+      console.log("Wordlist is", wordList)
+      break;
+    // Build out for the rest of the levels and units
+    case 'spanish2-unit-a':
+        wordList = spanish2UnitAWordList;
+        break;
+      case 'spanish2-unit-b':
+        wordList = spanish2UnitBWordList;
+        break;
+        case 'spanish2-unit-c':
+        wordList = spanish2UnitCWordList;
+        break;
+        case 'spanish2-unit-d':
+        wordList = spanish2UnitDWordList;
+        break;
+        case 'spanish2-unit-e':
+        wordList = spanish2UnitEWordList;
+        break;
+        case 'spanish2-unit-f':
+        wordList = spanish2UnitFWordList;
+        break;
+        case 'spanish2-unit-g':
+        wordList = spanish2UnitGWordList;
+        break;
+        case 'spanish2-unit-h':
+        wordList = spanish2UnitHWordList;
+        break;
+        case 'spanish3-unit-a':
+        wordList = spanish3UnitAWordList;
+        break;
+        case 'spanish3-unit-b':
+        wordList = spanish3UnitBWordList;
+        break;
+        case 'spanish3-unit-c':
+        wordList = spanish3UnitCWordList;
+        break;
+        case 'spanish3-unit-d':
+        wordList = spanish3UnitDWordList;
+        break;
+        case 'spanish3-unit-e':
+        wordList = spanish3UnitEWordList;
+        break;
+        case 'spanish4-unit-a':
+        wordList = spanish4UnitAWordList;
+        break;
+        case 'spanish4-unit-b':
+        wordList = spanish4UnitBWordList;
+        break;
+        case 'spanish4-unit-c':
+        wordList = spanish4UnitCWordList;
+        break;
+        case 'spanish4-unit-d':
+        wordList = spanish4UnitDWordList;
+        break;
+        case 'spanish4-unit-e':
+        wordList = spanish4UnitEWordList;
+        break;
+        case 'spanish4-unit-f':
+        wordList = spanish4UnitFWordList;
+        break;
+        case 'ap-spanish-unit-a':
+        wordList = apSpanishUnitAWordList;
+        break;
+        case 'ap-spanish-unit-b':
+        wordList = apSpanishUnitBWordList;
+        break;
+        case 'ap-spanish-unit-c':
+        wordList = apSpanishUnitCWordList;
+        break;
+        case 'ap-spanish-unit-d':
+        wordList = apSpanishUnitDWordList;
+        break;
+        case 'ap-spanish-unit-e':
+        wordList = apSpanishUnitEWordList;
+        break;
+        case 'ap-spanish-unit-f':
+        wordList = apSpanishUnitFWordList;
+        break;
+    default:
+      wordList = defaultWordList;
+  }
+  randomWord();
 });

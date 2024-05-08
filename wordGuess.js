@@ -20,7 +20,7 @@ highScoreDisplay.innerText = highScore;
 function randomWord() {
   let ranItem = wordList[Math.floor(Math.random() * wordList.length)];
   word = ranItem.word;
-  maxGuesses = word.length >= 5 ? 10 : 8;
+  maxGuesses = word.length >= 9 ? 8 : 5;
   correctLetters = [];
   incorrectLetters = [];
   hintTag.innerText = ranItem.hint;
@@ -180,6 +180,14 @@ classDropdown.addEventListener('change', () => {
     let selectedClass = classDropdown.value;
     console.log("Change Made In Dropdown", selectedClass);
   switch (selectedClass) {
+    case 'spanish-numbers-100':
+      console.log ("Numbers are selected")
+      wordList = spanishNumbers100;
+      console.log ("Wordlist is", wordList)
+      break;
+    case 'spanish-numbers-big':
+      wordList = spanishNumbersBig;
+      break;
     case 'spanish1-unit-a':
       wordList = spanish1UnitAWordList;
       break;

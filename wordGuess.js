@@ -131,48 +131,48 @@ async function handleFileSelect(event) {
 
     reader.readAsText(file);
 }
-// Using a modal
-const modal = document.getElementById("myModal");
+// // Using a modal
+// const modal = document.getElementById("myModal");
 
-// Open the modal
-const openModalBtn = document.getElementById("open-modal-btn");
+// // Open the modal
+// const openModalBtn = document.getElementById("open-modal-btn");
 
-// Close the modal
-const closeBtn = document.getElementsByClassName("close")[0];
+// // Close the modal
+// const closeBtn = document.getElementsByClassName("close")[0];
 
-const customWordInput = document.getElementById('custom-word-input');
+// const customWordInput = document.getElementById('custom-word-input');
 
-openModalBtn.onclick = function() {
-  modal.style.display = "block";
-  customWordInput.focus(); // Set focus to the input field inside the modal ... not working ... 
-}
+// openModalBtn.onclick = function() {
+//   modal.style.display = "block";
+//   customWordInput.focus(); // Set focus to the input field inside the modal ... not working ... 
+// }
 
-// Close when user clicks on <span> (x)
-closeBtn.onclick = function() {
-  modal.style.display = "none";
-}
+// // Close when user clicks on <span> (x)
+// closeBtn.onclick = function() {
+//   modal.style.display = "none";
+// }
 
-// Close when user clicks anywhere outside of the modal
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// // Close when user clicks anywhere outside of the modal
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
 
-// Function to add custom word
-const addWordBtn = document.getElementById('add-word-btn');
+// // Function to add custom word
+// const addWordBtn = document.getElementById('add-word-btn');
 
-addWordBtn.addEventListener('click', () => {
-    const inputText = customWordInput.value.trim();
-    const [word, hint] = inputText.split(',');
-    if (word && hint) {
-        wordList.push({ word: word.trim(), hint: hint.trim() });
-        customWordInput.value = '';
-        modal.style.display = "none";
-    } else {
-        alert('Please enter the word and hint separated by a comma.');
-    }
-});
+// addWordBtn.addEventListener('click', () => {
+//     const inputText = customWordInput.value.trim();
+//     const [word, hint] = inputText.split(',');
+//     if (word && hint) {
+//         wordList.push({ word: word.trim(), hint: hint.trim() });
+//         customWordInput.value = '';
+//         modal.style.display = "none";
+//     } else {
+//         alert('Please enter the word and hint separated by a comma.');
+//     }
+// });
 
 const classDropdown = document.getElementById('class-dropdown');
 

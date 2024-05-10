@@ -66,18 +66,27 @@ function initGame(e) {
       alert(`Congrats! You found the word ${word.toUpperCase()}`);
       if (score > highScore) {
         highScore = score;
-        localStorage.setItem("highScore", highScore); // Update high score in local storage
-        highScoreDisplay.innerText = highScore; // Update high score display
+        localStorage.setItem("highScore", highScore);
+        highScoreDisplay.innerText = highScore;
+        // Prompt to send score to teacher
+        if (confirm("You've achieved a new high score! Do you want to send your score to the teacher?")) {
+          mailResultsToTeacher();
+        }
       }
       return randomWord();
     } else if (maxGuesses < 1) {
       alert("Game over! You don't have remaining guesses");
+      // Zero out the score
+      score = 0;
+      scoreDisplay.innerText = score;
+      mailResultsToTeacher();
       for (let i = 0; i < word.length; i++) {
         inputs.querySelectorAll("input")[i].value = word[i];
       }
     }
   }, 100);
 }
+
 
 resetBtn.addEventListener("click", randomWord);
 typingInput.addEventListener("input", initGame);
@@ -304,3 +313,43 @@ console.log("K is selected")
   }
   randomWord();
 });
+
+function mailResultsToTeacher() {
+  const teacherEmail = prompt("Please enter your teacher's email address:");
+
+  if (teacherEmail && teacherEmail.trim() !== '') {
+    const subject = `Game Results for Student`;
+    const message = `
+      Word: ${word.toUpperCase()}
+      Score: ${score}
+      Incorrect Letters: ${incorrectLetters.join(',')}
+      Correct Letters: ${correctLetters.join(',')}
+    `;
+
+    const apiEndpoint = 'https://api.mailjet.com/v3.1/send';
+
+    fetch(apiEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        to: teacherEmail,
+        subject: subject,
+        message: message,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to send email');
+        }
+        alert('Results sent to teacher successfully!');
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+        alert('Failed to send results to teacher. Please try again later.');
+      });
+  } else {
+    alert('Please enter a valid email address.');
+  }
+}
